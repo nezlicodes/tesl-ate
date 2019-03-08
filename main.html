@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>Tesl'ate - an animation</title>
+</head>
+<body>
+		
+	<div class="container">
+		<div class="text"> 
+			<p class='first'>When I close my eyes I invariably observe first, a background of very dark and uniform
+					blue, not unlike the sky on a clear but starless night. </p> 
+			<p class= "second">In a few seconds this field becomes
+					animated with innumerable scintillating flakes of green, arranged in several layers and advancing
+					towards me </p>
+					<p class= "third">Then there appears, to the right, a beautiful pattern of two systems of parallel and
+							closely spaced lines, at right angles to one another, in all sorts of colors</p></div>
+			
+		<div class="a"> <div class="circle"> </div> </div>
+		<div class="f"> <div class="circle"> </div> </div>
+		<div class="left"> <div class="pair1"> </div> <div class="pair2"> </div> </div>
+		 
+		
+		  
+	
+	</div>
+
+	<script>    
+			$(document).ready(function() {
+				
+				let drawCircles = () => {	
+					var $circle = $('.circle');
+					for (let i = 0; i<125; i++) {
+					$circle.clone().insertAfter($circle);
+				}}
+				drawCircles();
+			});
+		</script>  
+
+</body>
+</html>

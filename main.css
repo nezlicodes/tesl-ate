@@ -1,0 +1,168 @@
+body{
+	font-family:'Courier New', Courier, monospace;
+}
+
+
+.container{
+	height: 100vh;
+    background-color: black;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: "a a a"
+							"q b left"
+							"f f f";
+	grid-gap: 15px;
+	animation-name: animate;
+	animation-delay: 2s;
+	animation-duration: 40s;
+}
+
+.text{
+
+	grid-area:b;
+
+	background-color: rgb(102, 131, 211);
+	justify-content: center;
+	align-content: center;
+	
+}
+p{
+	font-size: 1.25rem;
+}
+
+.a{
+	margin: 1em 1em 1em 1em;
+	display: flex;
+	grid-area: a;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.f{
+	margin: 1em 1em 1em 1em;
+	display: flex;
+	grid-area: f;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.circle{
+	opacity: 0;
+	height:0.75em;
+	width: 0.75em;
+	border-radius: 50%;
+	background-color: rgb(36, 212, 36);
+	animation-name: display;
+	animation-delay: 12s;
+	animation-duration: 10s;
+	box-shadow: 0.02em 0.02em 0.02em 0.02em rgb(59, 249, 12);
+}
+
+.left{
+	grid-area:left;
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-between;
+	
+}
+
+.d{
+	grid-area:q;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.pair1{
+	opacity: 0;
+	width:1em;
+	height: 10em;
+	border: 5px solid transparent;
+	border-top:black !important; 
+	border-bottom: black !important;
+	border-image: linear-gradient(#b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+	border-image-slice:1;
+	animation-name: parallels;
+	animation-delay: 23s;
+	animation-duration: 10s;
+	align-self: center;
+	justify-self: center;
+}
+
+.pair2{
+	opacity:0;
+	width:10em;
+	height: 1em;
+	border: 5px solid transparent;
+	border-left:black !important; 
+	border-right: black !important;
+	border-image: linear-gradient(#b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+	border-image-slice:1;
+	animation-name: parallels;
+	animation-delay: 23s;
+	animation-duration: 10s;
+	align-self: center;
+	justify-self: center;
+}
+
+.first{
+	opacity:0;
+	animation-name: first;
+	animation-delay: 2s;
+	animation-duration:10s;
+}
+
+.second{
+	opacity:0;
+	animation-name: first;
+	animation-delay: 12s;
+	animation-duration:10s;
+}
+@keyframes first{
+	25%{opacity:1};
+	100%{opacity:0}
+}
+
+.third{
+	
+		opacity:0;
+		animation-name: first;
+		animation-delay: 23s;
+		animation-duration:10s;
+	}
+
+
+
+@keyframes animate{
+	0%{background-color: rgb(8, 9, 51)}
+	
+	100%{background-color:grey;}
+}
+
+@keyframes display {
+	
+	25%{opacity:0.25; transform: scale(1.5, 1.5)}
+	50%{opacity:0.50; transform: scale(2, 2)}
+	75%{opacity:0.75; transform: scale(2.3, 2.4)}
+	100%{opacity:1; transform: scale(3, 4)}
+}
+
+
+@keyframes parallels{
+	25%{opacity:0.25; }
+	30%{opacity: 1;transform: scale(1.5,1.5)}
+	50%{opacity: 1;transform: scale(2,2); transform: translateX(-2px)}
+	75%{opacity: 1;transform: scale(2.5,2.5); transform: translateX(-50px)}
+	100%{opacity: 1;transform: scale(3,3); grid-area: q;}
+}
+
+
+@keyframes parallel{
+	25%{opacity: 1;transform: scale(3,3); }
+	30%{opacity: 1;transform: scale(2.5,2.5);}
+	75%{opacity: 1;transform: scale(1.5,1.5)}
+	50%{opacity: 1;transform: scale(2,2); }
+	
+	
+}
